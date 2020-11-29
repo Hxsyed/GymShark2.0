@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/archivo_black</item>
+        <item>@font/audiowide</item>
+        <item>@font/baloo_tamma</item>
+        <item>@font/bungee</item>
+        <item>@font/candal</item>
+        <item>@font/chango</item>
+        <item>@font/concert_one</item>
+        <item>@font/convergence</item>
+        <item>@font/days_one</item>
+    </array>
+</resources>

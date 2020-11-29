@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fitnesstest"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-sdk tools:overrideLibrary="android.support.v17.leanback"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/gymsharklogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/gymsharklogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.fitnesstest.Chest" />
+        <activity android:name="com.example.fitnesstest.Bicep" />
+        <activity android:name="com.example.fitnesstest.Shoulder" />
+        <activity android:name="com.example.fitnesstest.Leg" />
+        <activity android:name="com.example.fitnesstest.Back" />
+        <activity android:name="com.example.fitnesstest.WorkoutAct" />
+        <activity android:name="com.example.fitnesstest.MainActivity" />
+        <activity android:name="com.example.fitnesstest.Login" />
+        <activity android:name="com.example.fitnesstest.Register" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

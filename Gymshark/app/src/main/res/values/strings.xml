@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Gym Shark 2.0</string>
+
+    <string-array name="gymquotes">
+        <item>Strong people are harder to kill than weak people and more useful in general</item>
+        <item>Just remember, somewhere, a little Chinese girl is warming up with your max</item>
+        <item>Last time I checked, lifting theory has a PR of zero</item>
+        <item>A champion is someone who gets up when they can’t</item>
+        <item>The road to nowhere is paved with excuses</item>
+        <item>Today I will do what others won’t, so tomorrow I can accomplish what others can’t</item>
+        <item>Do something today that your future self will thank you for</item>
+        <item>We are what we repeatedly do. Excellence then is not an act but a habit</item>
+        <item>No matter how slow you go, you are still lapping everybody on the couch</item>
+        <item>To give anything less than your best is to sacrifice the gift</item>
+        <item>Life begins at the end of your comfort zone</item>
+        <item>Strength does not come from physical capacity. It comes from an indomitable will</item>
+    </string-array>
+
+    <string-array name="authors">
+        <item>Mark Rippetoe</item>
+        <item>Jim Conroy</item>
+        <item>Steve Shaw</item>
+        <item>Jack Dempsey</item>
+        <item>Mark Bell</item>
+        <item>Jerry Rice</item>
+        <item>Unknown</item>
+        <item>Aristotle</item>
+        <item>Unknown</item>
+        <item>Steve Prefontaine</item>
+        <item>Unknown</item>
+        <item>Mahatma Gandhi</item>
+    </string-array>
+</resources>

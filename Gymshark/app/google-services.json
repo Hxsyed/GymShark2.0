@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "665316967395",
+    "firebase_url": "https://fitness-test-9e57f.firebaseio.com",
+    "project_id": "fitness-test-9e57f",
+    "storage_bucket": "fitness-test-9e57f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665316967395:android:35aaa380eb0ed7fa8096d6",
+        "android_client_info": {
+          "package_name": "com.example.fitnesstest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665316967395-66068aamaingq31fu5bc4n5uctdkdj8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYSLSZ5gQp57K9YXnzdZlmrQaTSnEwNSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665316967395-66068aamaingq31fu5bc4n5uctdkdj8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
