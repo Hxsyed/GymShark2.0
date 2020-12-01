@@ -1,4 +1,4 @@
-package com.example.fitnesstest;
+  package com.example.fitnesstest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         subtitlepage.startAnimation(bttone);
 
         btnexercise.startAnimation(btthree);
+        logout.startAnimation(btthree);
         bgprogress.startAnimation(bttwo);
 
         //give an event to another page

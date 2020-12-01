@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText fullName,Email,Password,Phone;
+    EditText fullName,Email,Password,Phone, PersonWeight, PersonHeight;
     Button registerbutton;
     FirebaseAuth fAuth;
     TextView alreadyregister;
@@ -41,6 +41,8 @@ public class Register extends AppCompatActivity {
         Email      = findViewById(R.id.Email);
         Password   = findViewById(R.id.Password);
         Phone      = findViewById(R.id.Phone);
+        PersonHeight      = findViewById(R.id.PersonHeight);
+        PersonWeight      = findViewById(R.id.PersonWeight);
         registerbutton= findViewById(R.id.registerbutton);
         alreadyregister = findViewById(R.id.alreadyregister);
 
@@ -75,47 +77,12 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-
                 // register the user in firebase
-
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-
-                            // send verification link
-
-//                            FirebaseUser fuser = fAuth.getCurrentUser();
-//                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                @Override
-//                                public void onSuccess(Void aVoid) {
-//                                    Toast.makeText(Register.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
-//                                }
-//                            });
-
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-//                            userID = fAuth.getCurrentUser().getUid();
-//                            DocumentReference documentReference = fStore.collection("users").document(userID);
-//                            Map<String,Object> user = new HashMap<>();
-//                            user.put("fName",fullName);
-//                            user.put("email",email);
-//                            user.put("phone",phone);
-//                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                @Override
-//                                public void onSuccess(Void aVoid) {
-//                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Log.d(TAG, "onFailure: " + e.toString());
-//                                }
-//                            });
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }else {
@@ -125,15 +92,11 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-
-
-
         alreadyregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
-
     }
 }
