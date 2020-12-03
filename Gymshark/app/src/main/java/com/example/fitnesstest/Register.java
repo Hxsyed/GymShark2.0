@@ -3,34 +3,27 @@ package com.example.fitnesstest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Patterns;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class Register extends AppCompatActivity {
-    public static final String TAG = "TAG";
     EditText fullName,Email,Password,Phone, PersonWeight, PersonHeight;
     Button registerbutton;
     FirebaseAuth fAuth;
     TextView alreadyregister;
-    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +52,22 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
-                String mfullName = fullName.getText().toString();
-                String phone    = Phone.getText().toString();
+                String mfullName = fullName.getText().toString().trim();
+                String phone    = Phone.getText().toString().trim();
+                String mPersonHeight = PersonHeight.getText().toString().trim();
+                String mPersonWeight = PersonWeight.getText().toString().trim();
+
+                if(TextUtils.isEmpty(mfullName)){
+                    fullName.setError("Name is Required.");
+                    return;
+                }
 
                 if(TextUtils.isEmpty(email)){
                     Email.setError("Email is Required.");
                     return;
+                }
+                if(!Patterns.EMAIL_ADDRESS.matcher(Email.getText().toString()).matches()) {
+                    Email.setError("Email is INVALID.");
                 }
 
                 if(TextUtils.isEmpty(password)){
@@ -74,6 +77,25 @@ public class Register extends AppCompatActivity {
 
                 if(password.length() < 6){
                     Password.setError("Password Must be >= 6 Characters");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(phone)){
+                    Phone.setError("Phone Number is Required.");
+                    return;
+                }
+                if(phone.length() < 10){
+                    Phone.setError("Phone Number must be 10 digits");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(mPersonHeight)){
+                    PersonHeight.setError("Height is Required.");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(mPersonWeight)){
+                    PersonWeight.setError("Weight is Required.");
                     return;
                 }
 

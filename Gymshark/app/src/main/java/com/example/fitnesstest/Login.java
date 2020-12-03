@@ -60,9 +60,7 @@ public class Login extends AppCompatActivity {
                     Logpass.setError("Password Must be >= 6 Characters");
                     return;
                 }
-//
 //                // authenticate the user
-//
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -77,7 +75,6 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
-
         newhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
