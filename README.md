@@ -2,13 +2,13 @@ GymShark2.0
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 App Functionality
 
-  ◙ User Register/ Login
+    ◙ User Register/ Login
   
-  ◙ Random Generated User quotes
+    ◙ Random Generated User quotes
   
-  ◙ Full Week worth of body workouts
+    ◙ Full Week worth of body workouts
   
-  ◙ Timer with start and pause method
+    ◙ Timer with start and pause method
   
 
 App Demo
