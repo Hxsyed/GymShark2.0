@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,6 +22,7 @@ public class Bicep extends AppCompatActivity {
     public View divpage, bgprogress;
     public LinearLayout fitone;
     public ImageView imgTimer;
+    private Handler mHandler = new Handler();
 
     private static final long START_TIME_IN_MILLIS = 3600100;
     private CountDownTimer countDownTimer;
@@ -99,11 +101,20 @@ public class Bicep extends AppCompatActivity {
                 mTimerRunning = false;
                 startexercise.setText("START");
                 Toast.makeText(getApplicationContext(),"Done!", Toast.LENGTH_SHORT).show();
+                mHandler.postDelayed(delayRun, 1500);
             }
         }.start();
         mTimerRunning = true;
         startexercise.setText("PAUSE");
     }
+
+    private Runnable delayRun  = new Runnable() {
+        @Override
+        public void run() {
+            Intent a = new Intent(Bicep.this,WorkoutAct.class);
+            startActivity(a);
+        }
+    };
 
     private void updateCountDownText(){
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
