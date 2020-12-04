@@ -128,15 +128,11 @@
         android:id="@+id/registerbutton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
         android:text="Register"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PersonWeight" />
 
@@ -193,5 +189,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PersonHeight" />
+
+    <Button
+        android:id="@+id/guestworkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="GUEST WORKOUT"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/registerbutton"
+        app:layout_constraintTop_toBottomOf="@+id/PersonWeight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

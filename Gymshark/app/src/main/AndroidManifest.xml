@@ -20,6 +20,7 @@
         <activity android:name="com.example.fitnesstest.Back" />
         <activity android:name="com.example.fitnesstest.WorkoutAct" />
         <activity android:name="com.example.fitnesstest.MainActivity" />
+        <activity android:name="com.example.fitnesstest.Privacy" />
         <activity android:name="com.example.fitnesstest.Login" />
         <activity android:name="com.example.fitnesstest.Register" >
             <intent-filter>

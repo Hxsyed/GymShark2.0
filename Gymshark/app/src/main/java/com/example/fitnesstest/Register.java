@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
     EditText fullName,Email,Password,Phone, PersonWeight, PersonHeight;
-    Button registerbutton;
+    Button registerbutton, guestworkout;
     FirebaseAuth fAuth;
     TextView alreadyregister;
 
@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity {
         PersonHeight      = findViewById(R.id.PersonHeight);
         PersonWeight      = findViewById(R.id.PersonWeight);
         registerbutton= findViewById(R.id.registerbutton);
+        guestworkout= findViewById(R.id.guestworkout);
         alreadyregister = findViewById(R.id.alreadyregister);
 
         fAuth = FirebaseAuth.getInstance();
@@ -105,7 +106,7 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),Privacy.class));
 
                         }else {
                             Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -118,6 +119,13 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));
+            }
+        });
+
+        guestworkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Privacy.class));
             }
         });
     }
