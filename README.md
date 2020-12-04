@@ -4,11 +4,13 @@ App Functionality
 
     ◙ User Register/ Login
   
-    ◙ Random Generated User quotes
+    ◙ Random Generated Motivational quotes
   
     ◙ Full Week worth of body workouts
   
     ◙ Timer with start and pause method
+    
+    ◙ Guest Workout
   
 
 App Demo
