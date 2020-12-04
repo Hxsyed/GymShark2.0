@@ -4,13 +4,13 @@ App Functionality
 
     ◙ User Register/ Login
   
-    ◙ Random Generated Motivational quotes
+    ◙ Random generated motivational quotes
   
     ◙ Full Week worth of body workouts
   
-    ◙ Timer with start and pause method
+    ◙ Built-in countdown timer
     
-    ◙ Guest Workout for first time users
+    ◙ Guest workout option for first time users
     
   
 
