@@ -10,7 +10,8 @@ App Functionality
   
     ◙ Timer with start and pause method
     
-    ◙ Guest Workout
+    ◙ Guest Workout for first time users
+    
   
 
 App Demo
