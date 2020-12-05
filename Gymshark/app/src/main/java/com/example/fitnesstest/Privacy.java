@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Privacy extends AppCompatActivity {
-
+    // variable initialization
     private WebView webView;
     private Button accept, decline;
 
@@ -22,7 +22,7 @@ public class Privacy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy);
 
-
+        // assigning xml values to variables
         webView = (WebView) findViewById(R.id.privacywebview);
         accept = (Button)findViewById(R.id.accept);
         decline = (Button)findViewById(R.id.decline);
@@ -34,14 +34,14 @@ public class Privacy extends AppCompatActivity {
 
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
-
+        // accept event listener
         accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Privacy.this, MainActivity.class));
             }
         });
-
+        // decline event listener
         decline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,14 +50,14 @@ public class Privacy extends AppCompatActivity {
         });
 
     }
-
+    // back pressed activity
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(Privacy.this,Register.class);
         startActivity(intent);
         finish();
     }
-
+    // return home activity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

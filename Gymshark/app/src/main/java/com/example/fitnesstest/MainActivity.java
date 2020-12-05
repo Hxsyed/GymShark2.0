@@ -19,7 +19,7 @@ import java.util.Stack;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-
+    // variable initialization
     public TextView titlepage, subtitlepage, btnexercise, quoteText, logout;
     public ImageView imgpage;
     public Animation animimgpage, bttone, bttwo, btthree, lefttoright;
@@ -27,19 +27,23 @@ public class MainActivity extends AppCompatActivity {
     public Button nextButton, prevButton;
     public Stack<String> previousQuotes;
     public int index;
+//    Resources res = getResources();
+//    final String[] allQuotes = res.getStringArray(R.array.gymquotes);
+//    final String[] allAuthors = res.getStringArray(R.array.authors);
 
+    // on create activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Load Animations
         animimgpage = AnimationUtils.loadAnimation(this, R.anim.animimgpage);
         bttone = AnimationUtils.loadAnimation(this, R.anim.bttone);
         bttwo = AnimationUtils.loadAnimation(this, R.anim.bttwo);
         btthree = AnimationUtils.loadAnimation(this, R.anim.btthree);
         lefttoright = AnimationUtils.loadAnimation(this, R.anim.lefttoright);
 
-
+        // assigning xml values to variables
         titlepage = (TextView) findViewById(R.id.titlepage);
         subtitlepage = (TextView) findViewById(R.id.subtitlepage);
         btnexercise = (TextView) findViewById(R.id.btnexercise);
@@ -48,14 +52,12 @@ public class MainActivity extends AppCompatActivity {
         quoteText = (TextView) findViewById(R.id.titlepage);
         nextButton = (Button) findViewById(R.id.nextbutton);
         prevButton = (Button)findViewById(R.id.backbutton);
-
-
         bgprogress = (View) findViewById(R.id.bgprogress);
 
+        // assign animation
         imgpage.startAnimation(animimgpage);
         titlepage.startAnimation(bttone);
         subtitlepage.startAnimation(bttone);
-
         btnexercise.startAnimation(btthree);
         logout.startAnimation(btthree);
         bgprogress.startAnimation(bttwo);
@@ -69,15 +71,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(a);
             }
         });
+        // to get resources
         Resources res = getResources();
+        // arrays for quotes and authors
         final String[] allQuotes = res.getStringArray(R.array.gymquotes);
         final String[] allAuthors = res.getStringArray(R.array.authors);
-
+        // stack to get the previous quote
         previousQuotes = new Stack<>();
-
         index = getRandomQuote(allQuotes.length-1);
         quoteText.setText(allQuotes[index]+" ~~ "+ allAuthors[index]);
-
+        // nextbutton event listener for next quote
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 previousQuotes.push(allQuotes[index]+" ~~ "+ allAuthors[index]);
             }
         });
-
+        // previous button  event listener for prev quote
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        // logout button for user sign out
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    // random quote generator
     public int getRandomQuote(int length){
         return (int) (Math.random() * length) + 1;
     }
-
+    // back pressed activity
     @Override
     public void onBackPressed()
     {

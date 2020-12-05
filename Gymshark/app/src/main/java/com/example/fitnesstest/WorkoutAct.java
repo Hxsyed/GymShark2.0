@@ -11,16 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class WorkoutAct extends AppCompatActivity {
-
+    // variable initialization
      public TextView titlepage, subtitlepage, intropage, subintropage, fitonetitle, fitonedesc, fittwotitle, fittwodesc, fitthreetitle,
     fitthreedesc, fitfourtitle, fitfourdesc, fitfivetitle,fitfivedesc;
-
     public View divpage;
-
     public Animation bttone, bttwo, bttfour, bttfive, bttsix, bttseven, btteight;
-
     public LinearLayout fitone, fittwo, fitthree, fitfour, fitfive;
-
+    // on create activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +32,7 @@ public class WorkoutAct extends AppCompatActivity {
         bttseven = AnimationUtils.loadAnimation(this,R.anim.bttseven);
         btteight = AnimationUtils.loadAnimation(this,R.anim.btteight);
 
+        // assigning xml values to variables
         titlepage = (TextView) findViewById(R.id.titlepage);
         subtitlepage = (TextView) findViewById(R.id.subtitlepage);
         intropage = (TextView) findViewById(R.id.intropage);
@@ -49,7 +47,14 @@ public class WorkoutAct extends AppCompatActivity {
         fitfourdesc = (TextView) findViewById(R.id.fitfourdesc);
         fitfivetitle = (TextView) findViewById(R.id.fitfivetitle);
         fitfivedesc = (TextView) findViewById(R.id.fitfivedesc);
+        fitone = (LinearLayout) findViewById(R.id.fitone);
+        fittwo = (LinearLayout) findViewById(R.id.fittwo);
+        fitthree = (LinearLayout) findViewById(R.id.fitthree);
+        fitfour = (LinearLayout) findViewById(R.id.fitfour);
+        fitfive = (LinearLayout) findViewById(R.id.fitfive);
+        divpage = (View) findViewById(R.id.divpage);
 
+        // takes user to chest workout
         fitonetitle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -58,7 +63,7 @@ public class WorkoutAct extends AppCompatActivity {
                 startActivity(a);
             }
         });
-
+        // takes user to bicep workout
         fittwotitle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -67,7 +72,7 @@ public class WorkoutAct extends AppCompatActivity {
                 startActivity(a);
             }
         });
-
+        // takes user to back workout
         fitthreetitle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -76,7 +81,7 @@ public class WorkoutAct extends AppCompatActivity {
                 startActivity(a);
             }
         });
-
+        // takes user to shoulder workout
         fitfourtitle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -85,6 +90,7 @@ public class WorkoutAct extends AppCompatActivity {
                 startActivity(a);
             }
         });
+        // takes user to leg workout
        fitfivetitle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -94,28 +100,19 @@ public class WorkoutAct extends AppCompatActivity {
             }
         });
 
-        fitone = (LinearLayout) findViewById(R.id.fitone);
-        fittwo = (LinearLayout) findViewById(R.id.fittwo);
-        fitthree = (LinearLayout) findViewById(R.id.fitthree);
-        fitfour = (LinearLayout) findViewById(R.id.fitfour);
-        fitfive = (LinearLayout) findViewById(R.id.fitfive);
-
-        divpage = (View) findViewById(R.id.divpage);
-
         //assign the animation
         titlepage.startAnimation(bttone);
         subtitlepage.startAnimation(bttone);
         divpage.startAnimation(bttone);
-
         intropage.startAnimation(bttwo);
         subintropage.startAnimation(bttwo);
-
         fitone.startAnimation(bttfour);
         fittwo.startAnimation(bttfour);
         fitthree.startAnimation(bttfive);
         fitfour.startAnimation(bttsix);
         fitfive.startAnimation(bttsix);
     }
+    // back pressed activity
     @Override
     public void onBackPressed()
     {

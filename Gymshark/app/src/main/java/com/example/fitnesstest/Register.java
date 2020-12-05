@@ -20,16 +20,19 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Register extends AppCompatActivity {
+    // variable initialization
     EditText fullName,Email,Password,Phone, PersonWeight, PersonHeight;
     Button registerbutton, guestworkout;
     FirebaseAuth fAuth;
     TextView alreadyregister;
 
+    // on create activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        // assigning xml values to variables
         fullName   = findViewById(R.id.fullName);
         Email      = findViewById(R.id.Email);
         Password   = findViewById(R.id.Password);
@@ -39,15 +42,13 @@ public class Register extends AppCompatActivity {
         registerbutton= findViewById(R.id.registerbutton);
         guestworkout= findViewById(R.id.guestworkout);
         alreadyregister = findViewById(R.id.alreadyregister);
-
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
         }
-
-
+        // register event listener
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +58,7 @@ public class Register extends AppCompatActivity {
                 String phone    = Phone.getText().toString().trim();
                 String mPersonHeight = PersonHeight.getText().toString().trim();
                 String mPersonWeight = PersonWeight.getText().toString().trim();
-
+                // catching a few errors
                 if(TextUtils.isEmpty(mfullName)){
                     fullName.setError("Name is Required.");
                     return;
@@ -115,13 +116,14 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
+        // users who already registered go to login page
         alreadyregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
-
+        // guest workout option goes to privacy page
         guestworkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

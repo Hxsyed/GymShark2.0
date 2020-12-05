@@ -17,20 +17,19 @@ import android.widget.Toast;
 import java.util.Locale;
 
 public class Leg extends AppCompatActivity {
-
+    // variable initialization
     public TextView intropage, subintropage, fitonetitle, fitonedesc, timerValue, nextexercise,startexercise;
     public View divpage, bgprogress;
     public LinearLayout fitone;
     public ImageView imgTimer;
     private Handler mHandler = new Handler();
-
     private static final long START_TIME_IN_MILLIS = 3600100;
     private CountDownTimer countDownTimer;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
-
     Animation btthree, bttfour, ttbone, ttbtwo, alphago;
 
+    // on create activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +42,7 @@ public class Leg extends AppCompatActivity {
         ttbtwo = AnimationUtils.loadAnimation(this, R.anim.ttbtwo);
         alphago = AnimationUtils.loadAnimation(this, R.anim.alphago);
 
+        // assigning xml values to variables
         intropage = (TextView) findViewById(R.id.intropage);
         subintropage = (TextView) findViewById(R.id.subintropage);
         fitonetitle = (TextView) findViewById(R.id.fitonetitle);
@@ -50,12 +50,9 @@ public class Leg extends AppCompatActivity {
         timerValue = (TextView) findViewById(R.id.timerValue);
         nextexercise = (TextView) findViewById(R.id.nextexercise);
         startexercise = (TextView) findViewById(R.id.startexercise);
-
         divpage = (View) findViewById(R.id.divpage);
         bgprogress = (View) findViewById(R.id.bgprogress);
-
         fitone = (LinearLayout) findViewById(R.id.fitone);
-
         imgTimer = (ImageView) findViewById(R.id.imgtimer);
 
         //assign animation
@@ -69,6 +66,7 @@ public class Leg extends AppCompatActivity {
         timerValue.startAnimation(alphago);
         imgTimer.startAnimation(alphago);
 
+        // event listener
         nextexercise.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -77,6 +75,7 @@ public class Leg extends AppCompatActivity {
                 startActivity(a);
             }
         });
+        // another event listener
         startexercise.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -87,6 +86,7 @@ public class Leg extends AppCompatActivity {
             }
         });
     }
+    // start timer method
     private void startTimer(){
         countDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
@@ -106,7 +106,7 @@ public class Leg extends AppCompatActivity {
         mTimerRunning = true;
         startexercise.setText("PAUSE");
     }
-
+    // handler method to delay the transition
     private Runnable delayRun  = new Runnable() {
         @Override
         public void run() {
@@ -114,7 +114,7 @@ public class Leg extends AppCompatActivity {
             startActivity(a);
         }
     };
-
+    // update the timer
     private void updateCountDownText(){
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
@@ -122,13 +122,13 @@ public class Leg extends AppCompatActivity {
         String timeLeft = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds) ;
         timerValue.setText(timeLeft);
     }
-
+    // pause time
     private void pauseTime(){
         countDownTimer.cancel();
         mTimerRunning = false;
         startexercise.setText("START");
     }
-
+    // back pressed activity
     @Override
     public void onBackPressed()
     {

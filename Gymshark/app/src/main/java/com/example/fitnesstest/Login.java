@@ -21,31 +21,34 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
+    // variable initialization
     EditText Logemail, Logpass;
     Button loginbutton;
     TextView newhere;
     FirebaseAuth fAuth;
 
-
+    // on create activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // assigning xml values to variables
         Logemail = findViewById(R.id.Logemail);
         Logpass = findViewById(R.id.Logpass);
         fAuth = FirebaseAuth.getInstance();
         loginbutton = findViewById(R.id.loginbutton);
         newhere = findViewById(R.id.newhere);
 
-
+        // login button event listener
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // variable initialization
                 String email = Logemail.getText().toString().trim();
                 String password = Logpass.getText().toString().trim();
 
+                // catching errors
                 if (TextUtils.isEmpty(email)) {
                     Logemail.setError("Email is Required.");
                     return;
@@ -60,7 +63,7 @@ public class Login extends AppCompatActivity {
                     Logpass.setError("Password Must be >= 6 Characters");
                     return;
                 }
-//                // authenticate the user
+                // authenticate the user
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -75,6 +78,7 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
+        // new user event listener
         newhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +86,7 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+    // back pressed activity
     @Override
     public void onBackPressed()
     {
