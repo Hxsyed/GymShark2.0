@@ -70,7 +70,7 @@ public class Back extends AppCompatActivity {
         nextexercise.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent a = new Intent(Back.this,MainActivity.class);
+                Intent a = new Intent(Back.this,AfterWorkout.class);
                 a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(a);
             }

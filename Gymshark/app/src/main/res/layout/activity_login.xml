@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Logemail" />
 
     <Button
-        android:id="@+id/loginbutton"
+        android:id="@+id/alarmbutton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="125dp"
@@ -91,6 +91,6 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/alarmbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

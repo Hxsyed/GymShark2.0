@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
         Logemail = findViewById(R.id.Logemail);
         Logpass = findViewById(R.id.Logpass);
         fAuth = FirebaseAuth.getInstance();
-        loginbutton = findViewById(R.id.loginbutton);
+        loginbutton = findViewById(R.id.alarmbutton);
         newhere = findViewById(R.id.newhere);
 
         // login button event listener

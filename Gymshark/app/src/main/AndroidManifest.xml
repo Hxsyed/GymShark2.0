@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-sdk tools:overrideLibrary="android.support.v17.leanback"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,7 @@
         <activity android:name="com.example.fitnesstest.MainActivity" />
         <activity android:name="com.example.fitnesstest.Privacy" />
         <activity android:name="com.example.fitnesstest.Login" />
+        <activity android:name="com.example.fitnesstest.AfterWorkout" />
         <activity android:name="com.example.fitnesstest.Register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
